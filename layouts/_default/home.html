@@ -1,37 +1,33 @@
 {{ define "main" }}
-<main class="bg-gradient-to-r flex-1 flex flex-col from-slate-950 via-slate-600 to-slate-950 ">
+<main class="bg-repeat  bg-[url('/assets/persian-pattern.png')] flex-1 flex flex-col from-slate-950 via-slate-600 to-slate-950 ">
     <!-- hero card section -->
-    <section class="m-auto w-5/6 md:w-3/5 font-mono flex flex-col md:flex-row items-center pt-[0.5rem] max-w-6xl md:mx-auto {{ if not (where .Site.RegularPages " Section " "posts ") }} mb-8 md:m-auto{{ end }}">
-        <img src="{{ "assets/yasin-amirany-photo.png" | relURL }}" alt="Yasin Amirany's photo" class="md:hidden my-[1rem] lg:block w-[13rem] h-[13rem] rounded-full object-cover aspect-square  md:mr-[1rem] ring-[0.2rem] ring-black" />
-        <div class="max-w-2xl mx-[1rem] text-center md:text-left md:mx-0">
-            <h1 class="font-bangers text-4xl  text-stone-300 pl-2  md:font-bold  rounded-md bg-stone-950">
-                <span class="text-slate-400">{</span>Back-End<span class="text-slate-400">}</span> Developer
-            </h1>
-            <p class="font-bangers text-slate-400  bg-dark-gray ">
-                // !@#$%^&*%#^!*@&#^&&$*&!**&#&&~~~&@&#@!()#__**$@*$**@*&$(#)@!@#($) //
-            </p>
-            <p class="bg-stone-950  text-2xl rounded-md pl-2  text-stone-200 m-0 p-0">
-                Hey! I'm <span class="font-semibold whitespace-nowrap text-black rounded-md px-1 bg-slate-400">Yasin Amirany</span>. A CS student and passionate back-end web developer. I'm driven to build innovative web solutions and contribute to the
+    <section class="bg-transparent md:border-[0.3rem] border-black md:bg-stone-700 rounded-xl m-auto w-[94%] md:w-3/5 font-ComicRelief flex md:my-[7rem] md:px-2 flex-col md:flex-row items-center max-w-6xl md:mx-auto {{ if not (where .Site.RegularPages " Section " "posts ") }} mb-8 md:m-auto{{ end }}">
+        <img src="{{ "assets/Gemini_Generated_Image_v5eh1sv5eh1sv5eh.png" | relURL }}" alt="Yasin Amirany's photo" class="my-[2rem] lg:my-1 md:hidden lg:block w-[16rem] h-[16rem]  rounded-full object-cover aspect-square  md:mx-[1rem] ring-[0.3rem] md:ring-[0.2rem] ring-black" />
+        <div class="max-w-2xl border-[0.3rem]  md:border-0  border-black bg-stone-700 text-center p-4 line  rounded-xl md:text-left">
+            <p class=" text-xl/9 md:text-2xl/10 text-stone-200">
+                Hey! I'm <span class=" whitespace-nowrap text-black rounded-md px-2 py-1 font-bangers   text-3xl bg-[#F7ECCF]">Yasin Amirany</span>. A Computer Science student and passionate <span class=" whitespace-nowrap font-bangers    text-black rounded-md px-2 py-1 text-3xl bg-[#F7ECCF]">Back-End</span> web developer. I'm driven to build innovative web solutions and contribute to the
                 future of the internet. I enjoy coding, problem-solving, and embracing challenges to grow as a developer.
             </p>
         </div>
-    </section>
+    </section>  
 
     {{ if (where .Site.RegularPages "Section" "posts") }}
-    <section class="bg-neutral-800 border-black border-t-[0.3rem] font-mono mt-[0.5rem] mx-auto w-full" id="blog">
+    <section class="bg-neutral-800 border-black border-t-[0.3rem]  font-mono mt-[0.5rem] mx-auto w-full" id="blog">
         <h2 class="font-bangers text-3xl text-[#707070] text-center">
             Latest Post
         </h2>
 
-        <div class="grid gap-6 m-auto w-5/6 md:w-3/5 pb-[1rem] max-w-6xl">
+        <div class="grid gap-6 m-auto md:w-3/5 pb-[1rem]  w-[94%] max-w-6xl">
             {{ range first 1 (where .Site.RegularPages "Section" "posts") }}
-            <article class="bg-[#707070] p-6 rounded-md hover:bg-dark-gray transition-colors w-full">
+            <article class="bg-[#707070] p-6 rounded-xl hover:bg-dark-gray md:border-[0.3rem] border-black transition-colors w-full">
                 <h3 class="font-bangers text-neutral-950 text-2xl mb-2 hover:text-slate-700">
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </h3>
-                <p class="text-slate-300 mb-2">{{ .Date.Format "January 2, 2006" }}</p>
-                <div class="font-mono font-bold text-xl custom-prose">{{ .Summary | truncate 250 | safeHTML }}</div>
-                <a href="{{ .RelPermalink }}" class="inline-block mt-4 text-slate-950 font-bold text-2xl rounded-md px-2 bg-slate-400 hover:bg-slate-700">read++</a>
+                <p class="text-[#F7ECCF] mb-2">{{ .Date.Format "January 2, 2006" }}</p>
+                <div class="font-mono font-bold text-xl custom-prose-home">{{ .Summary | truncate 250 | safeHTML }}</div>
+                <div class="flex justify-center mt-4">
+                    <a href="{{ .RelPermalink }}" class="inline-block font-bangers text-slate-950  text-2xl rounded-md px-2 bg-[#F7ECCF] hover:bg-[#E3BF71]">Read More</a>
+                </div>
             </article>
             {{ end }}
         </div>

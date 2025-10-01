@@ -1,21 +1,21 @@
 {{ define "main" }}
-<div class="bg-neutral-600 md:bg-neutral-800 font-mono  px-0">
-    <div class="max-w-3xl mx-auto md:bg-neutral-600 md:border-x-[0.3rem] border-black">
+<div class="bg-[#707070]  md:bg-neutral-800 font-mono  px-0">
+    <div class="max-w-3xl mx-auto md:bg-stone-500 md:border-x-[0.3rem] border-black">
         <div class="text-center mb-8 bg-neutral-900 text-amber-200 p-2 font-bangers">
             <h1 class="text-3xl">{{ .Title }}</h1>
             {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long" }}
             <time datetime="{{ $dateMachine }}" class="text-sm font-mono">{{ $dateHuman }}</time>
-            <div class="flex flex-wrap justify-center gap-2 mt-1">
+            <div class="flex flex-wrap justify-center gap-2 mt-1 font-verdana font-bold">
                 {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }} {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
             </div>
         </div>
 
-        <article class="prose prose-lg px-[1rem] max-w-none text-amber-100 text-xl font-mono pb-[3rem] custom-prose">
+        <article class="prose prose-lg px-[1rem] max-w-none text-xl font-ComicRelief pb-[3rem] custom-prose">
             {{ .Content }}
         </article>
 
         <!-- Fake Rating System -->
-        <div class="text-center mb-8 p-4 bg-neutral-900 rounded-lg">
+        <div class="text-center  pt-4 pb-[2rem]  bg-neutral-900 ">
             <h3 class="text-xl font-bold text-amber-200 mb-4">Rate this post</h3>
             <div class="flex justify-center gap-2 mb-4 star-rating">
                 {{ range $i := (seq 5) -}}
@@ -26,7 +26,7 @@
 
         <!-- Prank Modal -->
         <div id="prankModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div class="bg-neutral-900 p-8 rounded-lg max-w-md text-center">
+            <div class="bg-neutral-900 p-8  w-full text-center">
                 <h2 class="text-2xl font-bold text-amber-200 mb-4">kidding!</h2>
                 <p class="text-stone-300 mb-6">We don't actually have a rating system! But thanks anyway! it's so sweet of you ...</p>
                 <button onclick="closeModal()" class="bg-stone-700 hover:bg-stone-600 text-white px-6 py-2 rounded-lg transition-colors">
@@ -61,7 +61,7 @@
 
         {{ $currentPage := . }} {{ $related := where (.Site.RegularPages.Related .) "RelPermalink" "ne" $currentPage.RelPermalink | first 3 }} {{ if not $related }} {{ $related = where (.Site.RegularPages.RelatedIndices . "tags") "RelPermalink" "ne" $currentPage.RelPermalink
         | first 3 }} {{ end }} {{ if not $related }} {{ $related = where (where .Site.RegularPages "Type" "posts") "RelPermalink" "ne" $currentPage.RelPermalink | first 3 }} {{ end }} {{ if $related }}
-        <div class="relative">
+        <div class="relative my-4">
             <div class="absolute inset-0 flex items-center" aria-hidden="true">
                 <div class="w-full border-dotted border-t-[0.3rem] border-black "></div>
             </div>

@@ -3,7 +3,7 @@
     <h1 class="text-4xl font-bold mb-3 text-center font-bangers">{{ .Title }}</h1>
 
     {{ if .Content }}
-    <div class="font-mono mb-8 text-center text-xl font-bold bg-neutral-900 text-slate-300 p-2">{{ .Content }}</div>
+    <div class="font-mono mb-8 text-center text-xl font-bold bg-neutral-900 text-[#F7ECCF] p-2">{{ .Content }}</div>
     {{ end }}
 
     <div class="mx-[2rem] grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -16,7 +16,7 @@
                     <div class="text-stone-200">
                         {{ if .Summary }} {{ .Summary | truncate 150 }} {{ else }} {{ .Content | plainify | truncate 150 }} {{ end }}
                     </div>
-                    <div class="text-accent font-medium text-slate-400 underline hover:text-slate-300">
+                    <div class="text-accent font-medium text-[#F7ECCF] underline hover:text-slate-300">
                         Read more →
                     </div>
                 </div>

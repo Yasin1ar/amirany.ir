@@ -1,11 +1,11 @@
 {
     "name": "Yasin Amirany Blog",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Personal Hugo Blog",
     "main": "index.js",
     "scripts": {
         "build": "npm run tailwind:build && hugo --minify",
-        "build:dev": "npm run tailwind:build && hugo --minify && serve public",
+        "build:dev": "npm run tailwind:build && hugo --minify && hugo server -D",
         "tailwind:build": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --minify"
     },
     "keywords": [],
