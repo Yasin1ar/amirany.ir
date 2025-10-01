@@ -6,25 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
     <meta name="author" content="Yasin Amirany, یاسین امیرانی" />
-    <meta name="keywords" content="یاسین امیرانی, Yasin Amirany, Web Developer, Back-end Developer, Portfolio, یاسین امیرانی وب دولوپر, یاسین امیرانی برنامه نویس" />
+    <meta name="keywords" content="یاسین امیرانی, Yasin Amirany, Web Developer, Back-end Developer" />
     <meta name="google-site-verification" content="akTqMHhQ8rPt3nsIN0G6-d9QYfBj6bTthGgxEsD0PpQ" />
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}" />
     <meta property="og:description" content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
-    <meta property="og:image" content="{{ site.BaseURL }}assets/yasin-amirany-logo.png" />
+    <meta property="og:image" content="{{ site.BaseURL }}assets/yasin-amirany.png" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="website" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="{{ .Permalink }}" />
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ "assets/favicon.ico" | relURL }}" />
-
-    <!-- Language and Region -->
-    <meta http-equiv="content-language" content="en, fa" />
-    <meta name="geo.region" content="IR" />
 
     <!-- Title -->
     <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
@@ -36,13 +29,13 @@
             "@type": "Person",
             "name": "Yasin Amirany",
             "alternateName": "یاسین امیرانی",
-            "jobTitle": "Web Developer",
+            "jobTitle": "Back-End Developer",
             "url": "{{ site.BaseURL }}",
             "sameAs": [
                 "https://linkedin.com/in/yasin-amirany",
                 "https://github.com/yasin1ar/"
             ],
-            "description": "یاسین امیرانی - برنامه‌نویس وب و توسعه‌دهنده بک‌اند",
+            "description": "Yasin Amirany - Back-End Developer",
             "knowsLanguage": ["en", "fa"]
         }
     </script>
@@ -50,9 +43,10 @@
     
     {{ $style := resources.Get "css/style.css" | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-<!-- 
-    <script>
-        tailwind.config = { theme: { extend: {} } }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script> -->
+    
+    <!-- JavaScript Files -->
+    <script src="{{ "js/mobile-menu.js" | relURL }}" defer></script>
+    {{ if eq .Section "posts" }}
+    <script src="{{ "js/rating-system.js" | relURL }}" defer></script>
+    {{ end }}
 </head>

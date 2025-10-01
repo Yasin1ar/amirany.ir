@@ -1,0 +1,43 @@
+# Robots.txt for amirany.ir
+# Personal blog and portfolio of Yasin Amirany
+# Hosted on GitHub Pages
+
+User-agent: *
+Allow: /
+
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /package*.json
+Disallow: /hugo.toml
+Disallow: /hugo_stats.json
+Disallow: /*.md$
+
+Disallow: /content/
+Disallow: /layouts/
+Disallow: /data/
+Disallow: /archetypes/
+Disallow: /i18n/
+Disallow: /resources/
+
+# Allow important files and directories
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Allow: /icons/
+Allow: /assets/
+Allow: /favicon.ico
+
+# Allow RSS feeds and sitemaps for SEO
+Allow: /index.xml
+Allow: /posts/index.xml
+Allow: /tags/index.xml
+Allow: /categories/index.xml
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://amirany.ir/sitemap.xml
+
+# Crawl delay (GitHub Pages can handle normal crawling)
+Crawl-delay: 1
+

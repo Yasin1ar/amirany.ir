@@ -2,6 +2,17 @@ baseURL = 'https://amirany.ir/'
 languageCode = 'en-us'
 title = 'Yasin Amirany | Back-end Developer | Personal blog'
 
+# SEO and Meta Configuration
+[params]
+  description = "Personal blog and portfolio of Yasin Amirany, a Computer Science student and Back-End web developer passionate about building innovative web solutions."
+  author = "Yasin Amirany"
+  keywords = ["Yasin Amirany", "Back-end Developer", "Web Developer", "Computer Science", "Programming", "Software Development"]
+  
+  # Social Media
+  twitter = "@yasin1ar"
+  github = "yasin1ar"
+  linkedin = "yasin-amirany"
+
 [taxonomies]
   category = "categories"
   tag = "tags"
@@ -12,3 +23,22 @@ pageRef = '/posts'
   
 [build]
   writeStats = true
+
+# Sitemap Configuration
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# Output Formats
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+# Markup Configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

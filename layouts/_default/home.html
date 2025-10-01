@@ -2,7 +2,7 @@
 <main class="bg-repeat  bg-[url('/assets/persian-pattern.png')] flex-1 flex flex-col from-slate-950 via-slate-600 to-slate-950 ">
     <!-- hero card section -->
     <section class="bg-transparent md:border-[0.3rem] border-black md:bg-stone-700 rounded-xl m-auto w-[94%] md:w-3/5 font-ComicRelief flex md:my-[7rem] md:px-2 flex-col md:flex-row items-center max-w-6xl md:mx-auto {{ if not (where .Site.RegularPages " Section " "posts ") }} mb-8 md:m-auto{{ end }}">
-        <img src="{{ "assets/Gemini_Generated_Image_v5eh1sv5eh1sv5eh.png" | relURL }}" alt="Yasin Amirany's photo" class="my-[2rem] lg:my-1 md:hidden lg:block w-[16rem] h-[16rem]  rounded-full object-cover aspect-square  md:mx-[1rem] ring-[0.3rem] md:ring-[0.2rem] ring-black" />
+        <img src="{{ "assets/yasin-amirany.png" | relURL }}" alt="Yasin Amirany's photo" class="my-[2rem] lg:my-1 md:hidden lg:block w-[16rem] h-[16rem]  rounded-full object-cover aspect-square  md:mx-[1rem] ring-[0.3rem] md:ring-[0.2rem] ring-black" />
         <div class="max-w-2xl border-[0.3rem]  md:border-0  border-black bg-stone-700 text-center p-4 line  rounded-xl md:text-left">
             <p class=" text-xl/9 md:text-2xl/10 text-stone-200">
                 Hey! I'm <span class=" whitespace-nowrap text-black rounded-md px-2 py-1 font-bangers   text-3xl bg-[#F7ECCF]">Yasin Amirany</span>. A Computer Science student and passionate <span class=" whitespace-nowrap font-bangers    text-black rounded-md px-2 py-1 text-3xl bg-[#F7ECCF]">Back-End</span> web developer. I'm driven to build innovative web solutions and contribute to the
@@ -19,7 +19,7 @@
 
         <div class="grid gap-6 m-auto md:w-3/5 pb-[1rem]  w-[94%] max-w-6xl">
             {{ range first 1 (where .Site.RegularPages "Section" "posts") }}
-            <article class="bg-[#707070] p-6 rounded-xl hover:bg-dark-gray md:border-[0.3rem] border-black transition-colors w-full">
+            <article class="bg-[#707070] p-6 rounded-xl hover:bg-neutral-600 md:border-[0.3rem] border-black transition-colors w-full">
                 <h3 class="font-bangers text-neutral-950 text-2xl mb-2 hover:text-slate-700">
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </h3>

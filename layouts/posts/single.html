@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="bg-[#707070]  md:bg-neutral-800 font-mono  px-0">
-    <div class="max-w-3xl mx-auto md:bg-stone-500 md:border-x-[0.3rem] border-black">
+<div class="bg-neutral-800 font-mono  px-0">
+    <div class="max-w-3xl mx-auto bg-stone-500 md:border-x-[0.3rem] border-black">
         <div class="text-center mb-8 bg-neutral-900 text-amber-200 p-2 font-bangers">
             <h1 class="text-3xl">{{ .Title }}</h1>
             {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long" }}
@@ -16,7 +16,7 @@
 
         <!-- Fake Rating System -->
         <div class="text-center  pt-4 pb-[2rem]  bg-neutral-900 ">
-            <h3 class="text-xl font-bold text-amber-200 mb-4">Rate this post</h3>
+            <h2 class="text-xl font-bold text-amber-200 mb-4">Rate this post</h2>
             <div class="flex justify-center gap-2 mb-4 star-rating">
                 {{ range $i := (seq 5) -}}
                 <button onclick="ratePost({{ $i }})" class="text-3xl transition-colors cursor-pointer text-stone-600 hover:text-amber-400" data-rating="{{ $i }}">★</button> {{- end }}
@@ -25,39 +25,15 @@
         </div>
 
         <!-- Prank Modal -->
-        <div id="prankModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div id="prankModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
             <div class="bg-neutral-900 p-8  w-full text-center">
-                <h2 class="text-2xl font-bold text-amber-200 mb-4">kidding!</h2>
+                <h3 class="text-2xl font-bold text-amber-200 mb-4">kidding!</h3>
                 <p class="text-stone-300 mb-6">We don't actually have a rating system! But thanks anyway! it's so sweet of you ...</p>
                 <button onclick="closeModal()" class="bg-stone-700 hover:bg-stone-600 text-white px-6 py-2 rounded-lg transition-colors">
                     Close
                 </button>
             </div>
         </div>
-
-        <style>
-            .star-rating button:hover~button {
-                color: #9ca3af !important;
-                /* text-stone-600 */
-            }
-            
-            .star-rating:hover button {
-                color: #fbbf24 !important;
-                /* text-amber-400 */
-            }
-        </style>
-
-        <script>
-            function ratePost(rating) {
-                const modal = document.getElementById('prankModal');
-                modal.classList.remove('hidden');
-            }
-
-            function closeModal() {
-                const modal = document.getElementById('prankModal');
-                modal.classList.add('hidden');
-            }
-        </script>
 
         {{ $currentPage := . }} {{ $related := where (.Site.RegularPages.Related .) "RelPermalink" "ne" $currentPage.RelPermalink | first 3 }} {{ if not $related }} {{ $related = where (.Site.RegularPages.RelatedIndices . "tags") "RelPermalink" "ne" $currentPage.RelPermalink
         | first 3 }} {{ end }} {{ if not $related }} {{ $related = where (where .Site.RegularPages "Type" "posts") "RelPermalink" "ne" $currentPage.RelPermalink | first 3 }} {{ end }} {{ if $related }}
@@ -73,7 +49,7 @@
             <div class="grid gap-4">
                 {{ range $related }}
                 <a href="{{ .RelPermalink }}" class="block bg-neutral-900 text-amber-200 p-4 rounded hover:bg-neutral-800 transition-colors">
-                    <h3 class="text-xl font-bold mb-2">{{ .Title }}</h3>
+                    <h4 class="text-xl font-bold mb-2">{{ .Title }}</h4>
                     <time datetime="{{ .Date | time.Format " 2006-01-02T15:04:05-07:00 " }}" class="text-sm font-mono">
                         {{ .Date | time.Format ":date_long" }}
                     </time> {{ with .GetTerms "tags" }}

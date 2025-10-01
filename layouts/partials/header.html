@@ -1,8 +1,8 @@
 <header class="bg-stone-600 border-b-[0.3rem] border-black font-bangers text-2xl">
     <div class="flex items-center m-auto w-5/6 md:w-3/5">
-        <!-- Logo -->
+
         <a href="{{ .Site.BaseURL }}" class="font-MajorMonoDisplay">
-            <h1 class="text-larger md:font-black">amirany<span class="text-sm">.ir</span></h1>
+            <h1 class="text-3xl md:text-4xl md:font-black">amirany<span class="text-sm">.ir</span></h1>
         </a>
 
         <!-- Desktop Navigation -->
@@ -28,9 +28,9 @@
     </div>
 
     <!-- Mobile Navigation -->
-    <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[rgba(0,0,0,0.95)] z-50">
+    <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-stone-700 z-50">
         <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <button id="close-menu-button" class="absolute top-4 right-4 text-text-light focus:outline-none" aria-label="Close menu">
+            <button id="close-menu-button" class="absolute top-4 right-4 text-white focus:outline-none" aria-label="Close menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                         stroke-linecap="round"
@@ -40,7 +40,7 @@
                     />
                 </svg>
             </button> {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}" class="text-stone-400 text-4xl no-underline hover:text-accent transition-colors duration-300">
+            <a href="{{ .URL }}" class="text-stone-400 text-4xl no-underline hover:text-amber-400 transition-colors duration-300">
                 {{ .Name }}
             </a> {{ end }}
 
@@ -50,25 +50,3 @@
         </div>
     </nav>
 </header>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMenuButton = document.getElementById('close-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const body = document.body;
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('hidden');
-            body.classList.toggle('overflow-hidden');
-        }
-
-        mobileMenuButton.addEventListener('click', toggleMenu);
-        closeMenuButton.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach((link) => {
-            link.addEventListener('click', toggleMenu);
-        });
-    });
-</script>
