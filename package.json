@@ -1,0 +1,14 @@
+{
+    "name": "amirany.ir",
+    "version": "1.0.0",
+    "description": "My personal blog",
+    "scripts": {
+        "build": "bun run tailwind:build && hugo --minify",
+        "build:dev": "bun run tailwind:build && hugo --minify && hugo server -D",
+        "tailwind:build": "bunx @tailwindcss/cli -i ./themes/catective/assets/css/main.css -o ./themes/catective/assets/css/style.css --minify"
+    },
+    "devDependencies": {
+        "tailwindcss": "^4.1.8",
+        "@tailwindcss/cli": "^4.1.8"
+    }
+}

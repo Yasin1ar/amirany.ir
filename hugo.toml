@@ -1,0 +1,19 @@
+
+baseURL = 'https://amirany.ir/'
+languageCode = 'en-us'
+title = "Yasin's Blog"
+theme = "catective"
+
+[params]
+  sitename = "amirany.ir"
+  author = "Yasin Amirany"
+  author_image = "me.png"
+  author_image_dark = "avatar-dark.png"
+  social_github = 'https://github.com/yasin1ar/'
+  social_linkedin = 'https://linkedin.com/in/yasin-amirany'
+  social_telegram = 'https://t.me/y433in'
+  social_email = 'mailto:yasin@amirany.ir'
+  
+[[menus.main]]
+  name = "Posts"
+  pageRef = "posts"
