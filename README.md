@@ -1,0 +1,1 @@
+A simple personal blog built with [Hugo](https://gohugo.io/). The theme is a custom version of [Catective](https://github.com/Yasin1ar/hugo-theme-catective).

@@ -1,8 +1,10 @@
-
 baseURL = 'https://amirany.ir/'
 languageCode = 'en-us'
 title = "Yasin's Blog"
 theme = "catective"
+
+[outputs]
+home = ["HTML", "RSS", "Sitemap"]
 
 [params]
   sitename = "amirany.ir"
