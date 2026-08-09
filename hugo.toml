@@ -9,13 +9,19 @@ home = ["HTML", "RSS", "Sitemap"]
 [params]
   sitename = "amirany.ir"
   author = "Yasin Amirany"
+  alternate_names = ["Yasin Amirani"]
+  job_title = "Backend Engineer"
   author_image = "me.png"
   author_image_dark = "avatar-dark.png"
   social_github = 'https://github.com/yasin1ar/'
   social_linkedin = 'https://linkedin.com/in/yasin-amirany'
   social_telegram = 'https://t.me/y443in'
   social_email = 'mailto:yasin@amirany.ir'
-  
+  sameAs = [
+    'https://github.com/yasin1ar/',
+    'https://linkedin.com/in/yasin-amirany',
+    'https://t.me/y443in'
+  ]
 [[menus.main]]
   name = "Posts"
   pageRef = "posts"
