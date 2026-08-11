@@ -28,7 +28,7 @@ function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     try {
         localStorage.setItem(THEME_KEY, theme);
-    } catch (_) {}
+    } catch (_) { }
     updateToggleButton(theme);
 }
 
