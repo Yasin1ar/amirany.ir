@@ -8,7 +8,7 @@
         "tailwind:build": "bunx @tailwindcss/cli -i ./themes/catective/assets/css/main.css -o ./themes/catective/assets/css/style.css --minify"
     },
     "devDependencies": {
-        "tailwindcss": "^4.1.8",
-        "@tailwindcss/cli": "^4.1.8"
+        "@tailwindcss/cli": "^4.1.8",
+        "tailwindcss": "^4.1.8"
     }
 }
