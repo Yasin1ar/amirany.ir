@@ -19,4 +19,5 @@ showReadingTime: true
 
 lastmod: {{ .Date }} # REMINDER FOR ME: remove if it's the first time publishing
 
+toc: true
 ---

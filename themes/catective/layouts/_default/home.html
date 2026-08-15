@@ -4,7 +4,7 @@
 {{ $authorImage := site.Params.author_image  }}
 {{ $authorImageDark := site.Params.author_image_dark }}
 {{ $hero := site.Params.hero | default site.Params.description }}
-<section class="bg-persian-pattern flex-1 flex flex-col dark:select-text-green-700 ">
+<section class="  bg-persian-pattern dark:select-text-green-700 ">
     <!-- hero card section -->
     <section class="py-4  md:border-[0.3rem] border-black md:dark:bg-stone-700 md:bg-neutral-400 rounded-xl m-auto w-[94%] md:w-3/5 font-ComicRelief flex md:my-[7rem] md:px-2 flex-col md:flex-row items-center max-w-6xl md:mx-auto {{ if not $hasPosts }} mb-8 md:m-auto{{ end }}">
         <div class="relative my-[2rem] lg:my-1 md:hidden lg:block w-[16rem] h-[16rem] md:mx-[1rem] shrink-0">
@@ -23,7 +23,7 @@
     </section>
 
     {{ if $hasPosts }}
-    <section class="dark:bg-neutral-800 bg-neutral-400 border-black border-t-[0.3rem] font-mono mt-[0.5rem] mx-auto w-full" id="blog">
+    <section class="dark:bg-neutral-800 bg-neutral-400 border-black border-t-[0.3rem] font-mono mt-[0.5rem] mx-auto w-full " id="blog">
         <h2 class="font-bangers text-3xl dark:text-neutral-500 text-neutral-950 text-center">Latest Post</h2>
         <div class="grid gap-6 m-auto md:w-3/5 pb-[1rem] w-[94%] max-w-6xl">
             {{ range first 1 $hasPosts }}
