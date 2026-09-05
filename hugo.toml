@@ -9,7 +9,7 @@ home = ["HTML", "RSS", "Sitemap"]
 [params]
   sitename = "amirany.ir"
   author = "Yasin Amirany"
-  alternate_names = ["Yasin Amirani"]
+  alternate_names = ["Yasin Amirani", "Amirani", "یاسین امیرانی"]
   job_title = "Backend Engineer"
   author_image = "me.png"
   author_image_dark = "avatar-dark.png"

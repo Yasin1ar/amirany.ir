@@ -79,6 +79,9 @@
             {{ .Content }}
         </article>
 
+        <!-- SHARE POST -->
+        {{ partial "share-buttons.html" . }}
+
         <!-- RELATED POSTS -->
         {{ $related := .Site.RegularPages.Related . | first 3 }}
         {{ if not $related }}
