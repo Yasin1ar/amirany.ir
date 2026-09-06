@@ -1,10 +1,10 @@
 {{ define "main" }}
-<div class="dark:bg-neutral-800 bg-neutral-200 font-mono">
-    <div class="max-w-[50rem] mx-auto dark:bg-stone-500 bg-neutral-300 md:border-x-[0.3rem] border-black">
+<div class="bg-neutral-800 font-mono">
+    <div class="max-w-[50rem] mx-auto bg-stone-500 md:border-x-[0.3rem] border-black">
 
         <!-- HEADER SECTION -->
         <div
-            class="text-center dark:bg-neutral-900 bg-neutral-500 text-neutral-950 dark:text-amber-200 p-2 font-bangers">
+            class="text-center bg-neutral-900 text-amber-200 p-2 font-bangers">
             <h1 class="text-3xl">{{ .Title }}</h1>
             {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
             {{ $dateHuman := .Date | time.Format ":date_long" }}
@@ -39,7 +39,7 @@
         {{ with .Params.featured_image }}
         {{ with $.Resources.Get . }}
         {{ $img := .Resize "800x400" }} 
-        <div class="w-full px-4 py-6 bg-neutral-400 dark:bg-neutral-800">
+        <div class="w-full px-4 py-6 bg-neutral-800">
             <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" class="w-full rounded-4xl shadow-lg mx-auto block">
         </div>
         {{ end }}
@@ -50,11 +50,11 @@
         {{ with .TableOfContents }}
         {{ if ne . "<nav id=\"TableOfContents\"></nav>" }}
         <div class="px-[1rem] py-4" id="static-toc">
-            <div class="bg-neutral-600 dark:bg-neutral-800 rounded-lg p-4 border-[0.2rem] border-black">
-                <h2 class="text-2xl font-bangers text-sky-100 dark:text-amber-200 mb-3 text-center">
+            <div class="bg-neutral-800 rounded-lg p-4 border-[0.2rem] border-black">
+                <h2 class="text-2xl font-bangers text-amber-200 mb-3 text-center">
                     📑 Table of Contents
                 </h2>
-                <div class="toc-content text-neutral-950 dark:text-amber-200 font-mono">
+                <div class="toc-content text-amber-200 font-mono">
                     {{ . }}
                 </div>
             </div>
@@ -65,7 +65,7 @@
 
         <!-- FLOATING BACK TO TOP BUTTON -->
         <button id="floatingTopBtn"
-            class="fixed right-6 z-50 bg-neutral-700 dark:bg-neutral-900 text-sky-100 dark:text-amber-200 p-4 rounded-full shadow-2xl hover:bg-neutral-800 dark:hover:bg-neutral-700 transition-all duration-300 border-2 border-black hover:scale-110 opacity-0 pointer-events-none"
+            class="fixed right-6 z-50 bg-neutral-900 text-amber-200 p-4 rounded-full shadow-2xl hover:bg-neutral-700 transition-all duration-300 border-2 border-black hover:scale-110 opacity-0 pointer-events-none"
             aria-label="Back to Top" style="bottom: 3rem;">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -98,7 +98,7 @@
             </div>
             <div class="relative flex justify-center">
                 <span
-                    class="bg-neutral-600 px-4 text-2xl font-bangers mb-2 border-x-[0.3rem] border-black text-sky-100 dark:text-amber-200">
+                    class="bg-neutral-600 px-4 text-2xl font-bangers mb-2 border-x-[0.3rem] border-black text-amber-200">
                     More to Explore
                 </span>
             </div>
@@ -107,7 +107,7 @@
             <div class="grid gap-4">
                 {{ range $related }}
                 <a href="{{ .RelPermalink }}"
-                    class="block bg-neutral-700 dark:bg-neutral-900 text-sky-100 dark:text-amber-200 p-4 rounded hover:bg-neutral-800 transition-colors">
+                    class="block bg-neutral-900 text-amber-200 p-4 rounded hover:bg-neutral-800 transition-colors">
                     <h4 class="text-xl font-bold mb-2">{{ .Title }}</h4>
                     <time datetime="{{ .Date | time.Format " 2006-01-02T15:04:05-07:00" }}" class="text-sm font-mono">
                         {{ .Date | time.Format ":date_long" }}
@@ -116,7 +116,7 @@
                     <div class="flex flex-wrap gap-2 mt-2">
                         {{ range . }}
                         <span
-                            class="text-sm text-neutral-950 dark:text-amber-200 bg-sky-200 dark:bg-zinc-800 px-2 py-1 rounded">
+                            class="text-sm text-amber-200 bg-zinc-800 px-2 py-1 rounded">
                             {{ .LinkTitle }}
                         </span>
                         {{ end }}

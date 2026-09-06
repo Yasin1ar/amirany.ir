@@ -11,16 +11,19 @@ home = ["HTML", "RSS", "Sitemap"]
   author = "Yasin Amirany"
   alternate_names = ["Yasin Amirani", "Amirani", "یاسین امیرانی"]
   job_title = "Backend Engineer"
-  author_image = "me.png"
-  author_image_dark = "avatar-dark.png"
+  author_image = "yasin-amirany.png"
   social_github = 'https://github.com/yasin1ar/'
   social_linkedin = 'https://linkedin.com/in/yasin-amirany'
   social_telegram = 'https://t.me/y443in'
   social_email = 'mailto:yasin@amirany.ir'
+  social_reddit = 'https://www.reddit.com/user/Yasin1ar/'
+  social_x = 'https://x.com/YasinAmirany'
   sameAs = [
     'https://github.com/yasin1ar/',
     'https://linkedin.com/in/yasin-amirany',
-    'https://t.me/y443in'
+    'https://t.me/y443in',
+    'https://www.reddit.com/user/Yasin1ar/',
+    'https://x.com/YasinAmirany'
   ]
 [[menus.main]]
   name = "Posts"
