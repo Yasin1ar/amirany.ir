@@ -1,11 +1,4 @@
 <head>
-    <script>
-        (function () {
-            var t = localStorage.getItem('theme');
-            var d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', t || d);
-        })();
-    </script>
     <link rel="preload" href="/fonts/Bangers-Regular.ttf" as="font" crossorigin>
     <link rel="preload" href="/fonts/MajorMonoDisplay-Regular.ttf" as="font" crossorigin>
     <meta charset="UTF-8" />
@@ -41,10 +34,6 @@
             "description": "{{ site.Params.description | default "" }}"
         }
     </script>
-
-    {{ $themeToggle := resources.Get "js/theme-toggle.js" | js.Build | minify | fingerprint }}
-    <script src="{{ $themeToggle.RelPermalink }}" integrity="{{ $themeToggle.Data.Integrity }}"
-        crossorigin="anonymous"></script>
 
     {{ $mainJS := resources.Get "js/main.js" | js.Build | minify | fingerprint }}
     <script src="{{ $mainJS.RelPermalink }}" integrity="{{ $mainJS.Data.Integrity }}" crossorigin="anonymous"
