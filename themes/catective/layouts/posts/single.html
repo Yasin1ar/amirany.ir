@@ -82,6 +82,11 @@
         <!-- SHARE POST -->
         {{ partial "share-buttons.html" . }}
 
+        <!-- COMMENTS -->
+        {{ if ne .Params.comments false }}
+        {{ partial "comments.html" . }}
+        {{ end }}
+
         <!-- RELATED POSTS -->
         {{ $related := .Site.RegularPages.Related . | first 3 }}
         {{ if not $related }}
