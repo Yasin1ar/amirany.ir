@@ -3,8 +3,8 @@
 Place these font files here so the theme CSS can load them:
 
 - `Bangers-Regular.ttf`
-- `Megrim-Regular.ttf`
 - `MajorMonoDisplay-Regular.ttf`
+- `TheGirlNextDoor-Regular.ttf`
 - `ComicRelief-Regular.ttf`
 
 Hugo copies everything in the theme’s `static/` to the site root, so they will be served at `/fonts/...`.

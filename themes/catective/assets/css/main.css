@@ -24,14 +24,6 @@
 }
 
 @font-face {
-    font-family: 'Megrim';
-    src: url('../fonts/Megrim-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'MajorMonoDisplay';
     src: url('../fonts/MajorMonoDisplay-Regular.ttf') format('truetype');
     font-weight: 400;
@@ -47,6 +39,21 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'TheGirlNextDoor';
+    src: url('../fonts/TheGirlNextDoor-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.font-tgnd {
+    font-family: "The Girl Next Door", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .font-bangers {
     font-family: 'Bangers', system-ui;
 }
@@ -55,9 +62,6 @@
     font-family: 'ComicRelief', system-ui;
 }
 
-.font-Megrim {
-    font-family: 'Megrim', Tahoma, Arial, sans-serif;
-}
 
 .font-MajorMonoDisplay {
     font-family: 'MajorMonoDisplay', Tahoma, Arial, sans-serif;
