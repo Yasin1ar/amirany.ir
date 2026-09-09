@@ -4,7 +4,7 @@
     "description": "My personal blog",
     "scripts": {
         "build": "bun run tailwind:build && hugo --minify",
-        "build:dev": "bun run tailwind:build && hugo --minify && hugo server -D",
+        "build:dev": "bun run tailwind:build && hugo --minify && hugo server -D --port 1313",
         "tailwind:build": "bunx @tailwindcss/cli -i ./themes/catective/assets/css/main.css -o ./themes/catective/assets/css/style.css --minify"
     },
     "devDependencies": {

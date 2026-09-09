@@ -5,7 +5,7 @@ theme = "catective"
 buildFuture = true
 
 [outputs]
-home = ["HTML", "RSS", "Sitemap"]
+home = ["HTML", "JSON", "RSS", "Sitemap"]
 
 [params]
   sitename = "amirany.ir"

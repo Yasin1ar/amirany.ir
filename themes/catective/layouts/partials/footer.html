@@ -1,8 +1,8 @@
-<footer class="font-Megrim text-center bg-neutral-700 pb-[0.1rem] pt-[0.5rem] border-t-[0.3rem] border-black w-full">
+<footer  class="font-tgnd text-center bg-neutral-700 pb-[0.1rem] pt-[0.5rem] border-t-[0.3rem] border-black w-full">
     <div>
         <ul class="justify-center  flex gap-[1rem] ">
             {{ partial "social-links.html" . }}
         </ul>
-        <p class="text-lg my-2 text-sky-50">&copy; {{ now.Year }} <span class="text-amber-100"> {{ site.Params.sitename | default "amirany.ir" }}</span></p>
+        <p class="text-lg my-2 text-black">&copy; {{ now.Year }} {{ site.Params.sitename | default "amirany.ir" }}</p>
     </div>
 </footer>
