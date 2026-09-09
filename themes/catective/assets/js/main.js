@@ -281,7 +281,9 @@ class InlineSearch {
     render() {
         const query = this.input.value;
         const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-        if (!query.trim()) {
+        if (query.replace(/\s/g, '').length < 4) {
+            this.results.replaceChildren();
+            this.activeIndex = -1;
             this.hide();
             return;
         }
@@ -314,7 +316,7 @@ class InlineSearch {
             link.append(title);
 
             const excerpt = document.createElement('span');
-            excerpt.className = 'block truncate text-sm text-stone-200';
+            excerpt.className = 'block line-clamp-2 text-sm text-stone-200';
             this.appendHighlightedText(excerpt, this.getExcerpt(post, terms), terms);
             link.append(excerpt);
 
