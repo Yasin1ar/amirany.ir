@@ -482,3 +482,61 @@ function highlightArticleSearch() {
 }
 
 document.addEventListener('DOMContentLoaded', highlightArticleSearch);
+
+async function copyCode(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+    }
+
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.append(textarea);
+    textarea.select();
+    const copied = document.execCommand('copy');
+    textarea.remove();
+
+    if (!copied) {
+        throw new Error('Copy command failed');
+    }
+}
+
+function setupCodeCopyButtons() {
+    const articles = document.querySelectorAll('article.custom-prose, main.custom-prose');
+
+    articles.forEach((article) => {
+        article.querySelectorAll('pre').forEach((pre) => {
+            const code = pre.querySelector('code');
+            if (!code || pre.querySelector('.copy-code-button')) {
+                return;
+            }
+
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'copy-code-button';
+            button.setAttribute('aria-label', 'Copy code');
+            button.innerHTML = `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span>`;
+
+            button.addEventListener('click', async () => {
+                const label = button.querySelector('span');
+                try {
+                    await copyCode(code.textContent);
+                    label.textContent = 'Copied';
+                } catch {
+                    label.textContent = 'Unable to copy';
+                }
+
+                window.setTimeout(() => {
+                    label.textContent = 'Copy';
+                }, 2000);
+            });
+
+            pre.append(button);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setupCodeCopyButtons);

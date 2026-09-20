@@ -82,11 +82,40 @@
     }
 
     pre {
+`        position: relative;
         margin: 1rem 0;
-        padding: 1rem;
+        padding: 3.25rem 1rem 1rem;
         border-radius: 0.5rem;
         overflow-x: auto;
         max-width: 100%;
+    }
+
+    .copy-code-button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.6rem;
+        border: 1px solid #d18100;
+        border-radius: 0.35rem;
+        background: #1c0f02;
+        color: #fde68a;
+        font-family: Verdana, Tahoma, Arial, sans-serif;
+        font-size: 0.75rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .copy-code-button:hover,
+    .copy-code-button:focus-visible {
+        background: #422006;
+    }
+
+    .copy-code-button svg {
+        width: 1rem;
+        height: 1rem;
     }
 
     code {
