@@ -522,7 +522,7 @@ function setupCodeCopyButtons() {
     articles.forEach((article) => {
         article.querySelectorAll('pre').forEach((pre) => {
             const code = pre.querySelector('code');
-            if (!code || pre.querySelector('.copy-code-button')) {
+            if (!code || pre.previousElementSibling?.classList.contains('copy-code-button')) {
                 return;
             }
 
@@ -546,7 +546,10 @@ function setupCodeCopyButtons() {
                 }, 2000);
             });
 
-            pre.append(button);
+            const wrapper = document.createElement('div');
+            wrapper.className = 'code-block-wrapper';
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.append(button, pre);
         });
     });
 }
