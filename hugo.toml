@@ -18,13 +18,12 @@ home = ["HTML", "JSON", "RSS", "Sitemap"]
   social_telegram = 'https://t.me/y443in'
   social_email = 'mailto:yasin@amirany.ir'
   social_reddit = 'https://www.reddit.com/user/Yasin1ar/'
-  social_x = 'https://x.com/YasinAmirany'
-  sameAs = [
+
+  sameAs = [    
     'https://github.com/yasin1ar/',
     'https://linkedin.com/in/yasin-amirany',
     'https://t.me/y443in',
     'https://www.reddit.com/user/Yasin1ar/',
-    'https://x.com/YasinAmirany'
   ]
 [[menus.main]]
   name = "Posts"

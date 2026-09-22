@@ -6,7 +6,7 @@
 
         <!-- Desktop Search Bar (Hidden on small screens) -->
         <form action="{{ "search/" | relURL }}" method="GET" role="search"
-            class="relative hidden font-tgnd lg:flex flex-1 min-w-[140px] max-w-xs my-1" data-search-form
+            class="relative hidden font-mono lg:flex flex-1 min-w-[140px] max-w-xs my-1" data-search-form
             data-search-index="{{ "index.json" | relURL }}">
             <div class="relative  flex items-center w-full">
                 <input type="search" name="q" placeholder="⌕ Search Posts..."
@@ -45,7 +45,7 @@
             </button>
 
             <!-- Mobile Search Bar -->
-            <form action="{{ "search/" | relURL }}" method="GET" role="search" class="font-tgnd relative w-4/5 max-w-xs"
+            <form action="{{ "search/" | relURL }}" method="GET" role="search" class="font-mono relative w-4/5 max-w-xs"
                 data-search-form data-search-index="{{ "index.json" | relURL }}">
                 <div class="relative flex items-center w-full">
                     <input type="search" name="q" placeholder="⌕ Search Posts..."

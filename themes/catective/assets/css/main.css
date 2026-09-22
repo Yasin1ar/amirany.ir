@@ -39,21 +39,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'TheGirlNextDoor';
-    src: url('../fonts/TheGirlNextDoor-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-
-.font-tgnd {
-    font-family: "The Girl Next Door", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
 .font-bangers {
     font-family: 'Bangers', system-ui;
 }
@@ -606,6 +591,8 @@
 
 /* Floating Back to Top Button */
 #floatingTopBtn {
+    --floating-top-btn-bottom: 3rem;
+    bottom: var(--floating-top-btn-bottom);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
     background: rgba(64, 64, 64, 0.95);
@@ -636,26 +623,20 @@
 }
 
 /* Responsive */
-/* Mobile phones (portrait) */
-@media (max-width: 480px) {
-    #floatingTopBtn {
-        padding: 0.65rem;
-        right: 0.75rem;
-        bottom: 1.25rem;
-    }
-
-    #floatingTopBtn svg {
-        height: 1.25rem;
-        width: 1.25rem;
-    }
+#floatingTopBtn.is-above-footer {
+    bottom: 10rem;
 }
 
-/* Small phones (landscape) and larger phones */
-@media (min-width: 481px) and (max-width: 767px) {
+/* Mobile phones (portrait + landscape) */
+@media (max-width: 767px) {
     #floatingTopBtn {
+        --floating-top-btn-bottom: 3rem;
         padding: 0.75rem;
-        right: 1rem;
-        bottom: 1.5rem;
+        right: 0.85rem;
+    }
+
+    #floatingTopBtn.is-above-footer {
+        bottom: 7rem;
     }
 
     #floatingTopBtn svg {
